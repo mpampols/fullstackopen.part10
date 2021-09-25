@@ -9,13 +9,16 @@ const styles = StyleSheet.create({
     paddingRight: "10px",
     paddingBottom: "15px",
     paddingLeft: "10px",
+    flexDirection: 'row',
+    gap: 20
   },
 });
 
 const AppBar = () => {
   return (
-    <View style={styles.container}>
-      <AppBarTab tabTitle="Repositories" />
+    <View style={ styles.container }>
+      <AppBarTab linkTo="/" tabTitle="Repositories" />
+      <AppBarTab linkTo="/signin" tabTitle="Sign In" />
     </View>
   );
 };
