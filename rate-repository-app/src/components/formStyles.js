@@ -15,7 +15,7 @@ const formStyles = StyleSheet.create({
     borderWidth: 1,
     borderColor: theme.colors.textSecondary,
     borderRadius: 5,
-  },
+  }
 });
 
 export default formStyles;

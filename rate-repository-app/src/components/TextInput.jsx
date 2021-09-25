@@ -1,9 +1,9 @@
 import React from 'react';
 import { TextInput as NativeTextInput } from 'react-native';
-import formStyles from './formStyles';
+import textInputStyles from './TextInputStyles';
 
 const TextInput = ({ style, error, ...props }) => {
-  const textInputStyle = [style];
+  const textInputStyle = [style, error && textInputStyles.error];
 
   return <NativeTextInput style={textInputStyle} {...props} />;
 };
