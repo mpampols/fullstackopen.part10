@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import AppBarTab from './AppBarTab';
 
 const styles = StyleSheet.create({
@@ -12,13 +12,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 20
   },
+  scrollContainer: {
+    backgroundColor: "#24292e",
+  }
 });
 
 const AppBar = () => {
   return (
-    <View style={ styles.container }>
-      <AppBarTab linkTo="/" tabTitle="Repositories" />
-      <AppBarTab linkTo="/signin" tabTitle="Sign In" />
+    <View>
+      <ScrollView horizontal style={ styles.scrollContainer }>
+        <View style={ styles.container }>
+          <AppBarTab linkTo="/" tabTitle="Repositories" />
+          <AppBarTab linkTo="/signin" tabTitle="Sign In" />
+        </View>
+      </ScrollView>
     </View>
   );
 };
