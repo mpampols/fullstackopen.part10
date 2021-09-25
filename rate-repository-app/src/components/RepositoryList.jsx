@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, StyleSheet, Text } from 'react-native';
+import { FlatList, View, StyleSheet } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 
 const styles = StyleSheet.create({
@@ -72,6 +72,7 @@ const RepositoryList = () => {
           forksCount={item.forksCount}
           reviewCount={item.reviewCount}
           ratingAverage={item.ratingAverage}
+          ownerAvatarUrl={item.ownerAvatarUrl}
           onPress={() => this._onPress(item)}
           onShowUnderlay={separators.highlight}
           onHideUnderlay={separators.unhighlight}>
