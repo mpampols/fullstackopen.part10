@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet} from 'react-native';
 import theme from '../theme';
-import preciseNumber from './utils/preciseNumber';
+import preciseNumber from '../utils/preciseNumber';
 
 const styles = StyleSheet.create({
   container: {
