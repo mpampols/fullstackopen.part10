@@ -13,7 +13,11 @@ const onPressFunction = () => {
   console.log("pressed");
 };
 
-const AppBarTab = ({ tabTitle, linkTo }) => {
+const AppBarTab = ({ tabTitle, linkTo, show }) => {
+  if (!show) {
+    return null;
+  }
+
   return (
     <View style={ styles.appBarItem }>
       <Pressable onPress={ onPressFunction }>

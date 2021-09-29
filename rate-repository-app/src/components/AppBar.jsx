@@ -1,6 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
 import AppBarTab from './AppBarTab';
+
+import { View, StyleSheet, ScrollView } from 'react-native';
+import { useQuery } from '@apollo/client';
+import { GET_AUTHORIZED_USER } from '../graphql/queries';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,12 +21,16 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  const { data } = useQuery(GET_AUTHORIZED_USER);
+  const loggedIn = data && data.authorizedUser;
+
   return (
     <View>
       <ScrollView horizontal style={ styles.scrollContainer }>
         <View style={ styles.container }>
-          <AppBarTab linkTo="/" tabTitle="Repositories" />
-          <AppBarTab linkTo="/signin" tabTitle="Sign In" />
+          <AppBarTab tabTitle="Repositories" linkTo="/" show={loggedIn}/>
+          <AppBarTab tabTitle="Sign in" linkTo="/signin" show={!loggedIn}/>
+          <AppBarTab tabTitle="Sign out" linkTo="/signout" show={loggedIn}/>
         </View>
       </ScrollView>
     </View>
