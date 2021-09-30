@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     paddingBottom: "15px",
     paddingLeft: "10px",
     flexDirection: 'row',
-    gap: 20
+    padding: 20
   },
   scrollContainer: {
     backgroundColor: "#24292e",

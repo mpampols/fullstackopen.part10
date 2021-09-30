@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   },
   rowView: {
     flexDirection: 'row',
-    gap: 10
+    padding: 10
   },
   avatarContainer: {
     paddingRight: 15,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   dataItem: {
     alignSelf: 'flex-start',
-    gap: 10,
+    padding: 10,
     flexGrow: 4,
     textAlign: 'center',
     marginTop: 15
@@ -63,29 +63,29 @@ const RepositoryItem = (
           }}>
         </Image>
         <View>
-          <View><Text style={{ fontWeight: 'bold' }}>{ fullName }</Text></View>
-          <View><Text style={{ marginTop: 10 }} color="textSecondary">{ description }</Text></View>
+          <View><Text testID="fullName" style={{ fontWeight: 'bold' }}>{ fullName }</Text></View>
+          <View><Text testID="description" style={{ marginTop: 10 }} color="textSecondary">{ description }</Text></View>
           <View style={ styles.languageContainer }>
-            <Text style={ styles.language }>{ language }</Text>
+            <Text testID="language" style={ styles.language }>{ language }</Text>
           </View>
         </View>
       </View>
       <View style={ styles.rowView }>
         <View style={ styles.dataContainer }>
           <View style={ styles.dataItem }>
-            <Text style={{ fontWeight: 'bold' }} fontWeight="bold">{ preciseNumber(stargazersCount) }</Text>
+            <Text testID="stargazersCount" style={{ fontWeight: 'bold' }} fontWeight="bold">{ preciseNumber(stargazersCount) }</Text>
             <Text color="textSecondary">Stars</Text>
           </View>
           <View style={ styles.dataItem }>
-            <Text style={{ fontWeight: 'bold' }} fontWeight="bold">{ preciseNumber(forksCount) }</Text>
+            <Text testID="forksCount" style={{ fontWeight: 'bold' }} fontWeight="bold">{ preciseNumber(forksCount) }</Text>
             <Text color="textSecondary">Forks</Text>
           </View>
           <View style={ styles.dataItem}>
-            <Text style={{ fontWeight: 'bold' }} fontWeight="bold">{ preciseNumber(reviewCount) }</Text>
+            <Text testID="reviewCount" style={{ fontWeight: 'bold' }} fontWeight="bold">{ preciseNumber(reviewCount) }</Text>
             <Text color="textSecondary">Reviews</Text>
           </View>
           <View style={ styles.dataItem }>
-            <Text style={{ fontWeight: 'bold' }} fontWeight="bold">{ ratingAverage }</Text>
+            <Text testID="ratingAverage" style={{ fontWeight: 'bold' }} fontWeight="bold">{ ratingAverage }</Text>
             <Text color="textSecondary">Rating</Text>
           </View>
         </View>

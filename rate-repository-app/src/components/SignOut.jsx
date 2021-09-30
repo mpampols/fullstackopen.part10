@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from "react-router-native";
 import AuthStorageContext from '../contexts/AuthStorageContext';
 import { useContext } from 'react';
-import { useApolloClient } from '@apollo/client';
+import { useApolloClient } from '@apollo/react-hooks';
 
 
 const SignOut = () => {
